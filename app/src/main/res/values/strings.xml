@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mascotas</string>
+    <string name="birthday">Fecha Nacimiento</string>
+    <string name="sex">Sexo</string>
 </resources>
