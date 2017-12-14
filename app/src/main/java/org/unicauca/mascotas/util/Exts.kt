@@ -1,5 +1,5 @@
 package org.unicauca.mascotas.util
 
-/**
- * Created by darfe on 12/12/2017.
- */
+import android.support.design.widget.TextInputLayout
+
+fun TextInputLayout.text():String = editText?.text.toString()

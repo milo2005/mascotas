@@ -8,6 +8,7 @@ object DB{
 
     fun init(context: Context){
         con = Room.databaseBuilder(context,AppDatabase::class.java, "mascotas.db")
+                .fallbackToDestructiveMigration()
                 .build()
     }
 

@@ -2,4 +2,8 @@
     <string name="app_name">Mascotas</string>
     <string name="birthday">Fecha Nacimiento</string>
     <string name="sex">Sexo</string>
+    <string-array name="sex_type">
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
 </resources>
