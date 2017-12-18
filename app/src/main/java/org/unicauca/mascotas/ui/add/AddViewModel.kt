@@ -1,19 +1,19 @@
 package org.unicauca.mascotas.ui.add
 
 import android.arch.lifecycle.ViewModel
+import io.reactivex.Observable
 import org.unicauca.mascotas.data.DB
 import org.unicauca.mascotas.data.dao.MascotaDao
 import org.unicauca.mascotas.data.model.Mascota
+import org.unicauca.mascotas.util.applySchedulers
 import kotlin.concurrent.thread
 
-class AddViewModel:ViewModel(){
+class AddViewModel : ViewModel() {
 
-    val dao:MascotaDao = DB.con.mascotaDao()
+    private val dao: MascotaDao = DB.con.mascotaDao()
 
-    fun saveMascota(mascota: Mascota){
-        thread{
-            dao.insert(mascota)
-        }
-    }
+    fun saveMascota(mascota: Mascota): Observable<Unit> =
+            Observable.fromCallable { dao.insert(mascota) }
+                    .applySchedulers()
 
 }

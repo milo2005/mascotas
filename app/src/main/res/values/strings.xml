@@ -2,6 +2,7 @@
     <string name="app_name">Mascotas</string>
     <string name="birthday">Fecha Nacimiento</string>
     <string name="sex">Sexo</string>
+    <string name="form_err">Debes llenar todos los campos</string>
     <string-array name="sex_type">
         <item>Macho</item>
         <item>Hembra</item>
