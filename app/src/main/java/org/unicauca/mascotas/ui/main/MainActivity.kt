@@ -10,6 +10,7 @@ import org.unicauca.mascotas.R
 import org.unicauca.mascotas.ui.adapters.MascotaAdapter
 import org.unicauca.mascotas.ui.add.AddActivity
 import org.unicauca.mascotas.util.LifeDisposable
+import org.unicauca.mascotas.util.snackBarAction
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
 
         dis add adapter.onDelete
                 .flatMap(viewModel::deleteMascota)
+                .flatMap { snackBarAction(root, R.string.deleted, R.string.action_restore, it) }
+                .flatMap (viewModel::restoreMascota)
                 .subscribe()
 
         dis add btnAdd.clicks()

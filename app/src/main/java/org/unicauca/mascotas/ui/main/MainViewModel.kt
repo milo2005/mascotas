@@ -26,5 +26,11 @@ class MainViewModel:ViewModel(){
                     .map { mascota }
                     .applySchedulers()
 
+    fun restoreMascota(mascota:Mascota): Observable<Unit> =
+            Observable.fromCallable{
+                dao.insert(mascota)
+            }
+                    .applySchedulers()
+
 
 }
